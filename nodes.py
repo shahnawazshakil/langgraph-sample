@@ -15,7 +15,7 @@ load_dotenv()
 
 SYSTEM_MESSAGE="""You are a helpful assistant that can use tools to answer questions"""
 
-def run_agent_reson(state: MessagesState) -> MessagesState:
+def run_agent_reason(state: MessagesState) -> MessagesState:
     """
     Run the agen reasoning node.
     """

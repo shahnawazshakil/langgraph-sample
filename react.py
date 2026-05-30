@@ -12,6 +12,7 @@ def triple(num:float) -> float:
     patam num: a number to triple
     returns: the triple of the input number
     """
+    print("inside triple tool")
     return float(num) * 3
 
 tools = [TavilySearch(max_results=1),triple]
