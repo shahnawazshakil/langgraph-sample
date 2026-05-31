@@ -17,7 +17,7 @@ SYSTEM_MESSAGE="""You are a helpful assistant that can use tools to answer quest
 
 def run_agent_reason(state: MessagesState) -> MessagesState:
     """
-    Run the agen reasoning node.
+    Run the agent reasoning node.
     """
     response = llm.invoke([{"role": "system","content": SYSTEM_MESSAGE}, *state["messages"]])
     return {"messages":[response]}
