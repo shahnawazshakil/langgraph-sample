@@ -25,6 +25,12 @@ flow.add_node(ACT,tool_node)
 
 flow.set_entry_point(AGENT_REASON)
 
+# You can add edge OR conditional_edge to the flow. Both define where the graph goes
+# next after a node finishes. The difference is whether that destination is fixed or
+# decided at runtime
+# Example of edge - flow.add_edge(ACT, AGENT_REASON)
+# Above means that after After my_act runs, the graph always goes to my_agent_reason. No decision logic — every execution follows the same path.
+# The one we are using below is conditional edge. After my_agent_reason runs, LangGraph calls should_continue(state) and uses its return value to pick the next node.
 flow.add_conditional_edges(AGENT_REASON,should_continue,{
     END:END,
     ACT:ACT})
